@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>家政管理系统</title>
+    <link rel="icon" href="assets/img/favicon.ico"/>
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/layui/css/layui.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/css/time.css" rel="stylesheet">
+</head>
+<body>
+<!-- head -->
+<div class="mb-3 bg-white">
+    <div class="container jumbotron-fluid">
+        <div class="navbar navbar-expand-lg">
+            <a href="index.html" class="navbar-brand time-logo">家政管理系统</a>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav nav nav-fill time-nav-links">
+                    <li class="nav-item">
+                        <a class="nav-link time-nav-link text-white" href="#customer" data-toggle="tab">客户界面</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link time-nav-link" href="#worker" data-toggle="tab">工作者界面</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link time-nav-link" href="#shop" data-toggle="tab">商家界面</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link time-nav-link" href="#admin" data-toggle="tab">管理者界面</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-item">
+                <img class="time-hand-img" src="assets/img/birds.jpg">
+                <b class="text-success">times</b>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /head -->
+<!-- body -->
+<div class="container">
+    <div class="tab-content">
+        <div id="customer" class="tab-pane fade active show">
+            <div class="row">
+                <div class="col-xl-2">
+                    <div class="nav nav-fill d-flex flex-column h4 time-links">
+                        <a class="p-2 time-link text-white" href="#user" data-toggle="tab">个人信息</a>
+                        <a class="p-2 time-link" href="#order" data-toggle="tab">订单</a>
+                        <a class="p-2 time-link" href="#type" data-toggle="tab">服务类型</a>
+                        <a class="p-2 time-link" href="#data" data-toggle="tab">评价</a>
+                        <a class="p-2 time-link" href="#money" data-toggle="tab">小金库</a>
+                        <a class="p-2 time-link" href="#tuling" data-toggle="tab">客服</a>
+                    </div>
+                </div>
+                <div class="col-xl-10 bg-white">
+                    <div class="tab-content">
+                        <div id="user" class="tab-pane fade active show">
+                            <div class="jumbotron h3 mt-3">个人信息</div>
+                            <div class="my-3 ml-5">
+                                <p class="text-primary">姓名: <b class="text-dark" id="u-name"></b></p>
+                                <p class="text-primary">性别: <b class="text-dark" id="u-sex"></b></p>
+                                <p class="text-primary">年龄: <b class="text-dark" id="u-age"></b></p>
+                                <p class="text-primary">邮箱: <b class="text-dark" id="u-email"></b></p>
+                                <p class="text-primary">身份: <b class="text-dark" id="u-role"></b></p>
+                                <p class="text-primary">简介: <b class="text-dark" id="u-info"></b></p>
+                            </div>
+                        </div>
+                        <div id="order" class="tab-pane fade">
+                            <div class="jumbotron h3 mt-3">订单</div>
+                            <div id="u-order" class="row">
+                            </div>
+                        </div>
+                        <div id="type" class="tab-pane fade">
+                            <div id="nav-title" class="jumbotron h3 mt-3">服务类型</div>
+                            <div id="server-type-info">
+                                <div class="h3">
+                                    <div class="badge badge-info mr-3">类型</div>
+                                    <b id="server-type">
+                                    </b>
+                                </div>
+                                <div id="server-info" class="row">
+                                </div>
+                            </div>
+                            <div id="server-content" class="mt-3">
+                                <div id="back" class="btn btn-success my-3">返回</div>
+                                <table class="table table-hover table-responsive-lg">
+                                    <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>简介</th>
+                                        <th>工作者</th>
+                                        <th>价钱</th>
+                                        <th>商店</th>
+                                        <th>已售</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="work"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="data" class="tab-pane fade">
+                            <div class="jumbotron h3 mt-3">评价</div>
+                            <table class="table table-hover table-responsive-lg">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>评价信息</th>
+                                    <th>下单时间</th>
+                                    <th>结束时间</th>
+                                </tr>
+                                </thead>
+                                <tbody id="c_comment"></tbody>
+                            </table>
+                        </div>
+                        <div id="money" class="tab-pane fade">
+                            <div class="jumbotron h3 mt-3">小金库</div>
+                            <div class="my-3">
+                                <label class="h3">上月资产:</label>
+                                <mark class="text-danger h2 mr-3">￥300</mark>
+                                <label class="h3">最近消费:</label>
+                                <mark class="text-danger h2 mr-3">￥130</mark>
+                                <label class="h3">总资产:</label>
+                                <mark class="text-danger h2 mr-3">￥170</mark>
+                            </div>
+                        </div>
+                        <div id="tuling" class="tab-pane fade">
+                            <div class="jumbotron h3 mt-3">客服</div>
+                            <div class="btn btn-warning"><a class="text-muted" href="http://tuling.hsutimes.club"
+                                                            target="_blank">进入客服</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="worker" class="tab-pane fade">
+            <div class="row">
+                <div class="col-xl-2">
+                    <div class="nav nav-fill d-flex flex-column h4 time-links">
+                        <a class="p-2 time-link text-white" href="#w-user" data-toggle="tab">个人信息</a>
+                        <a class="p-2 time-link" href="#w-work" data-toggle="tab">工作</a>
+                        <a class="p-2 time-link" href="#w-orders" data-toggle="tab">订单</a>
+                        <a class="p-2 time-link" href="#w-comments" data-toggle="tab">评价信息</a>
+                        <a class="p-2 time-link" href="#w-money" data-toggle="tab">小金库</a>
+                        <a class="p-2 time-link" href="#w-tuling" data-toggle="tab">客服</a>
+                    </div>
+                </div>
+                <div class="col-xl-10 bg-white">
+                    <div class="tab-content">
+                        <div id="w-user" class="tab-pane fade active show">
+                            <div class="jumbotron h3 mt-3">个人信息</div>
+                            <div class="my-3 ml-5">
+                                <p class="text-primary">姓名: <b class="text-dark" id="w-name"></b></p>
+                                <p class="text-primary">性别: <b class="text-dark" id="w-sex"></b></p>
+                                <p class="text-primary">年龄: <b class="text-dark" id="w-age"></b></p>
+                                <p class="text-primary">邮箱: <b class="text-dark" id="w-email"></b></p>
+                                <p class="text-primary">身份: <b class="text-dark" id="w-role"></b></p>
+                                <p class="text-primary">简介: <b class="text-dark" id="w-info"></b></p>
+                            </div>
+                        </div>
+                        <div id="w-work" class="tab-pane fade">
+                            <div class="jumbotron h3 mt-3">工作</div>
+                            <div class="mt-3">
+                                <div class="btn btn-info h3">添加工作</div>
+                                <table class="table table-hover table-responsive">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>价钱</th>
+                                        <th>名称</th>
+                                        <th>类型</th>
+                                        <th>简介</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="w-work-info">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="w-orders" class="tab-pane fade">
+                            <div class="jumbotron h3 mt-3">订单</div>
+                            <div class="mt-3">
+                                <table class="table table-hover table-responsive">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>编号</th>
+                                        <th>价钱</th>
+                                        <th>信息</th>
+                                        <th>订单状态</th>
+                                        <th>工作者</th>
+                                        <th>店铺名</th>
+                                        <th>服务信息</th>
+                                        <th>下单时间</th>
+                                        <th>结束时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="w-order">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="w-comments" class="tab-pane fade">
+                            <div class="jumbotron h3 mt-3">评价信息</div>
+                            <div class="mt-3">
+                                <table class="table table-hover table-responsive-lg">
+                                    <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>评价信息</th>
+                                        <th>下单时间</th>
+                                        <th>结束时间</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="w_comment"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="w-money" class="tab-pane fade">
+                            <div class="jumbotron h3 mt-3">小金库</div>
+                            <div class="my-3">
+                                <label class="h3">上月资产:</label>
+                                <mark class="text-danger h2 mr-3">￥300</mark>
+                                <label class="h3">最近收入:</label>
+                                <mark class="text-danger h2 mr-3">￥130</mark>
+                                <label class="h3">总资产:</label>
+                                <mark class="text-danger h2 mr-3">￥430</mark>
+                            </div>
+                        </div>
+                        <div id="w-tuling" class="tab-pane fade">
+                            <div class="jumbotron h3 mt-3">客服</div>
+                            <div class="mt-3">
+                                <div class="btn btn-warning"><a class="text-muted" href="http://tuling.hsutimes.club"
+                                                                target="_blank">进入客服</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="shop" class="tab-pane fade">
+            <div class="row">
+                <div class="col-xl-2">
+                    <div class="nav nav-fill d-flex flex-column h4 time-links">
+                        <a class="p-2 time-link text-white" href="#s-user" data-toggle="tab">个人信息</a>
+                        <a class="p-2 time-link" href="#shop-info" data-toggle="tab">商店信息</a>
+                        <a class="p-2 time-link" href="#shop-order" data-toggle="tab">订单</a>
+                        <a class="p-2 time-link" href="#shop-comment" data-toggle="tab">服务评价</a>
+                        <a class="p-2 time-link" href="#s-tuling" data-toggle="tab">客服</a>
+                    </div>
+                </div>
+                <div class="col-xl-10 bg-white">
+                    <div class="tab-content">
+                        <div id="s-user" class="tab-pane fade active show">
+                            <div class="jumbotron h3 mt-3">个人信息</div>
+                            <div class="my-3 ml-5">
+                                <p class="text-primary">姓名: <b class="text-dark" id="s-name"></b></p>
+                                <p class="text-primary">性别: <b class="text-dark" id="s-sex"></b></p>
+                                <p class="text-primary">年龄: <b class="text-dark" id="s-age"></b></p>
+                                <p class="text-primary">邮箱: <b class="text-dark" id="s-email"></b></p>
+                                <p class="text-primary">身份: <b class="text-dark" id="s-role"></b></p>
+                                <p class="text-primary">简介: <b class="text-dark" id="s-info"></b></p>
+                            </div>
+                        </div>
+                        <div id="shop-info" class="tab-pane fade">
+                            <div id="s-nav-title" class="jumbotron h3 mt-3">商店信息</div>
+                            <div id="s-type-info">
+                                <div class="btn btn-info mr-3 my-3">添加服务</div>
+                                <div class="h3">
+                                    <div class="badge badge-info mr-3">类型</div>
+                                    <b id="s-type">
+                                    </b>
+                                </div>
+                                <div id="s-infos" class="row">
+                                </div>
+                            </div>
+                            <div id="s-content" class="mt-3">
+                                <div id="s-back" class="btn btn-success mr-3 my-3">返回</div>
+                                <div class="btn btn-info mx-3 my-3">添加工作</div>
+                                <table class="table table-hover table-responsive-lg">
+                                    <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>简介</th>
+                                        <th>工作者</th>
+                                        <th>价钱</th>
+                                        <th>商店</th>
+                                        <th>已售</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="s-work"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="shop-order" class="tab-pane fade">
+                            <div class="jumbotron h3 mt-3">订单</div>
+                            <div class="mt-3">
+                                <table class="table table-hover table-responsive">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>编号</th>
+                                        <th>价钱</th>
+                                        <th>信息</th>
+                                        <th>订单状态</th>
+                                        <th>评价</th>
+                                        <th>工作者</th>
+                                        <th>店铺名</th>
+                                        <th>下单用户</th>
+                                        <th>服务信息</th>
+                                        <th>下单时间</th>
+                                        <th>结束时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="s-order">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="shop-comment" class="tab-pane fade">
+                            <div class="jumbotron h3 mt-3">服务评价</div>
+                            <table class="table table-hover table-responsive-lg">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>评价信息</th>
+                                    <th>下单时间</th>
+                                    <th>结束时间</th>
+                                </tr>
+                                </thead>
+                                <tbody id="s_comment"></tbody>
+                            </table>
+                        </div>
+                        <div id="s-tuling" class="tab-pane fade">
+                            <div class="jumbotron h3 mt-3">客服</div>
+                            <div class="btn btn-warning"><a class="text-muted" href="http://tuling.hsutimes.club"
+                                                            target="_blank">进入客服</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="admin" class="tab-pane fade">
+            <div class="row">
+                <div class="col-xl-2">
+                    <div class="nav nav-fill d-flex flex-column h4 time-links">
+                        <a class="p-2 time-link text-white" href="#dashboard" data-toggle="tab">首页</a>
+                        <a class="p-2 time-link" href="#user3" data-toggle="tab">用户信息</a>
+                        <a class="p-2 time-link" href="#order3" data-toggle="tab">订单</a>
+                        <a class="p-2 time-link" href="#log" data-toggle="tab">登录日志</a>
+                    </div>
+                </div>
+                <div class="col-xl-10 bg-white">
+                    <div class="tab-content">
+                        <div id="dashboard" class="tab-pane fade active show">
+                            <div class="jumbotron h3 mt-3">首页</div>
+                            <div class="row my-3 text-white text-center">
+                                <div class="col-xl-2">
+                                    <div class="bg-primary my-1 py-3">
+                                        <div class="h3">用户人数</div>
+                                        <div id="u-num" class="h4"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2">
+                                    <div class="bg-info my-1 py-3">
+                                        <div class="h3">访问人数</div>
+                                        <div id="l-num" class="h4"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2">
+                                    <div class="bg-warning my-1 py-3">
+                                        <div class="h3">订单数量</div>
+                                        <div id="o-num" class="h4"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2">
+                                    <div class="bg-secondary my-1 py-3">
+                                        <div class="h3">服务数量</div>
+                                        <div id="t-num" class="h4"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2">
+                                    <div class="bg-success my-1 py-3">
+                                        <div class="h3">商店数量</div>
+                                        <div id="s-num" class="h4"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-2">
+                                    <div class="bg-dark my-1 py-3">
+                                        <div class="h3">工作数量</div>
+                                        <div id="w-num" class="h4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="user3" class="tab-pane fade">
+                            <div class="jumbotron h3 mt-3">用户信息</div>
+                            <div class="mt-3">
+                                <table class="table table-hover table-responsive">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>年龄</th>
+                                        <th>性别</th>
+                                        <th>邮箱</th>
+                                        <th>身份</th>
+                                        <th>信息</th>
+                                        <th>加入时间</th>
+                                        <th>信息修改时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="all-users-info">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="order3" class="tab-pane fade">
+                            <div class="jumbotron h3 mt-3">订单</div>
+                            <div class="mt-3">
+                                <table class="table table-hover table-responsive">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>编号</th>
+                                        <th>价钱</th>
+                                        <th>信息</th>
+                                        <th>订单状态</th>
+                                        <th>评价</th>
+                                        <th>工作者</th>
+                                        <th>店铺名</th>
+                                        <th>下单用户</th>
+                                        <th>服务信息</th>
+                                        <th>下单时间</th>
+                                        <th>结束时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="all-order">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="log" class="tab-pane fade">
+                            <div class="jumbotron h3 mt-3">登录日志</div>
+                            <div class="mt-3">
+                                <table class="table table-hover table-responsive">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>姓名</th>
+                                        <th>年龄</th>
+                                        <th>性别</th>
+                                        <th>邮箱</th>
+                                        <th>身份</th>
+                                        <th>简介</th>
+                                        <th>加入时间</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="a-log">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg-transparent mt-3">
+    <div class="text-center text-success py-3">
+        Copyright © Times. 2018
+    </div>
+</div>
+<!-- /body -->
+<script src="assets/js/jquery-3.3.1.min.js" charset="UTF-8"></script>
+<script src="assets/js/bootstrap.min.js" charset="UTF-8"></script>
+<script src="assets/layui/layui.all.js" charset="UTF-8"></script>
+<script src="assets/js/time-house.js" charset="UTF-8"></script>
+</body>
+</html>

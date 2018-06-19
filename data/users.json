@@ -1,0 +1,43 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "name": "\u848b\u6b63",
+      "age": 20,
+      "sex": "\u7537",
+      "email": "1684700159@qq.com",
+      "role": "customer",
+      "info": "\u7b80\u4ecb\u4fe1\u606f",
+      "create_time": {
+        "date": "2018-05-10 13:32:12.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "modified_time": {
+        "date": "2018-05-10 13:32:12.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    },
+    {
+      "id": "3",
+      "name": "\u738b\u67d0",
+      "age": 25,
+      "sex": "\u7537",
+      "email": "24564554@qq.com",
+      "role": "admin",
+      "info": "\u7b80\u4ecb\u4fe1\u606f",
+      "create_time": {
+        "date": "2018-06-01 22:29:33.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      },
+      "modified_time": {
+        "date": "2018-06-01 22:29:36.000000",
+        "timezone_type": 3,
+        "timezone": "UTC"
+      }
+    }
+  ],
+  "status": "success"
+}

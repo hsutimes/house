@@ -1,0 +1,82 @@
+/**
+ * style 风格
+ */
+body {
+    background-color: #dddddd;
+}
+
+a {
+    text-decoration: none;
+}
+
+.time-tu {
+    padding: 10px;
+    width: 80%;
+    height: 200px;
+    background-color: #12de30;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.time-logo {
+    margin-right: 20px;
+    padding: 10px;
+    color: #f9fcff;
+    background-color: #12de30;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.time-logo:hover {
+    color: #f9fcff;
+}
+
+.time-hand-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+
+.time-nav-link {
+    color: #1fa5b9;
+    background-color: #ccccd0;
+}
+
+.time-nav-link:hover {
+    color: #818dbf;
+    background-color: #e2e2e2;
+    text-decoration: none;
+}
+
+.time-link {
+    color: #1fa5b9;
+    background-color: #ccccd0;
+}
+
+.time-link:hover {
+    color: #818dbf;
+    background-color: #e2e2e2;
+    text-decoration: none;
+}
+
+.time-card {
+    background: linear-gradient(to bottom right, #e4eaff, #e6ffff);
+}
+
+.time-card:hover {
+    color: #010000;
+    background-color: #d3d3d9;
+    box-shadow: 0 0 0.1em 0.1em #80e1ff;
+}
+
+.time-card .look-server-info, .time-card-footer {
+    width: 50%;
+    color: #ffffff;
+    text-align: center;
+    background: linear-gradient(to bottom right, #ff242a, #ff342e);
+}
+
+.time-card .look-server-info:hover, .time-card-footer:hover {
+    background: linear-gradient(to bottom right, #b71518, #c60a0c);
+}
+

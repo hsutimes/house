@@ -1,0 +1,26 @@
+# 开启 rewrite 功能
+Options +FollowSymlinks
+RewriteEngine on
+
+# 重写规则
+RewriteRule ^/$                 index.html [nc,qsa]
+RewriteRule ^api/a/user$         api/admin/users.php [nc,qsa]
+RewriteRule ^api/a/order$         api/admin/orders.php [nc,qsa]
+RewriteRule ^api/a/sysinfo$         api/admin/sysinfo.php [nc,qsa]
+RewriteRule ^api/a/log$         api/admin/log.php [nc,qsa]
+RewriteRule ^api/user$         api/user.php [nc,qsa]
+RewriteRule ^api/order$         api/order.php [nc,qsa]
+RewriteRule ^api/w/order$         api/work/order.php [nc,qsa]
+RewriteRule ^api/w/work$         api/work/work.php [nc,qsa]
+RewriteRule ^api/w/comment$         api/work/comment.php [nc,qsa]
+RewriteRule ^api/s/comment$         api/shop/comment.php [nc,qsa]
+RewriteRule ^api/s/order$         api/shop/orders.php [nc,qsa]
+RewriteRule ^api/type$         api/type.php [nc,qsa]
+RewriteRule ^api/server$         api/server.php [nc,qsa]
+RewriteRule ^api/c/work$         api/customer/work.php [nc,qsa]
+RewriteRule ^api/c_comment$         api/c_comment.php [nc,qsa]
+RewriteRule ^api/add/order$         api/add_order.php [nc,qsa]
+RewriteRule ^api/delete/order$         api/delete_order.php [nc,qsa]
+RewriteRule ^api/update/comment$         api/update_comment.php [nc,qsa]
+RewriteRule ^test$              api/test.html [nc,qsa]
+
